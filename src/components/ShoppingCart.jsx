@@ -55,9 +55,9 @@ export default function ShoppingCart({ cartItems, onUpdateQuantity, onRemove, ge
             </div>
 
             <div className="cart-item-price">
-              <span className="price">₹{item.price * item.quantity}</span>
+              <span className="price">£{item.price * item.quantity}</span>
               {item.originalPrice && (
-                <span className="original">₹{item.originalPrice * item.quantity}</span>
+                <span className="original">£{item.originalPrice * item.quantity}</span>
               )}
             </div>
 
@@ -79,13 +79,13 @@ export default function ShoppingCart({ cartItems, onUpdateQuantity, onRemove, ge
       >
         <div className="summary-row">
           <span>Subtotal:</span>
-          <span>₹{totalPrice.toFixed(2)}</span>
+          <span>£{totalPrice.toFixed(2)}</span>
         </div>
 
         {totalDiscount > 0 && (
           <div className="summary-row savings">
             <span>You Save:</span>
-            <span>-₹{totalDiscount.toFixed(2)}</span>
+            <span>-£{totalDiscount.toFixed(2)}</span>
           </div>
         )}
 
@@ -93,7 +93,7 @@ export default function ShoppingCart({ cartItems, onUpdateQuantity, onRemove, ge
 
         <div className="summary-row total">
           <span>Total:</span>
-          <span>₹{finalPrice.toFixed(2)}</span>
+          <span>£{finalPrice.toFixed(2)}</span>
         </div>
 
         <motion.button

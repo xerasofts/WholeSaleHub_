@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import CategoryCard from '../components/CategoryCard'
 import ProductListing from '../components/ProductListing'
-import { categories, getFeaturedProducts } from '../data/dummyData'
+import { categories, brands, getFeaturedProducts } from '../data/dummyData'
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -48,16 +48,19 @@ export default function Home({ onAddToCart }) {
 
           <motion.div className="search-quick-links" variants={fadeIn}>
             <Link to="/products" className="quick-link">
-              <span>🥬</span> All Products
+              <span>🛒</span> All Products
             </Link>
             <Link to="/category/1" className="quick-link">
-              <span>🥕</span> VIS***
+              <span>�</span> VIS***
             </Link>
             <Link to="/category/2" className="quick-link">
-              <span>🥛</span> AS***
+              <span>🏢</span> AS***
             </Link>
             <Link to="/category/3" className="quick-link">
-              <span>🍞</span> MAL***
+              <span>🏢</span> MAL***
+            </Link>
+            <Link to="/category/4" className="quick-link">
+              <span>🏢</span> MAR***
             </Link>
           </motion.div>
 
@@ -87,7 +90,7 @@ export default function Home({ onAddToCart }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            🏪 Shop by Brands
+            🛍️ Shop by Category
           </motion.span>
           <motion.h2 
             className="section-title"
@@ -95,7 +98,7 @@ export default function Home({ onAddToCart }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Explore Our Premium Brands
+            Explore Our Premium Categories
           </motion.h2>
           <motion.p 
             className="section-subtitle"
@@ -104,7 +107,7 @@ export default function Home({ onAddToCart }) {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            Quality dry and frozen products from trusted brands
+            Find exactly what you're looking for
           </motion.p>
         </div>
 
@@ -118,6 +121,51 @@ export default function Home({ onAddToCart }) {
           {categories.map((category) => (
             <motion.div key={category.id} variants={fadeIn}>
               <CategoryCard category={category} />
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* Brands Section */}
+      <section className="section section-dark">
+        <div className="section-header">
+          <motion.span 
+            className="section-label"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            🏢 Shop by Brands
+          </motion.span>
+          <motion.h2 
+            className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            Trusted Wholesale Suppliers
+          </motion.h2>
+          <motion.p 
+            className="section-subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            Browse products from our trusted brand partners
+          </motion.p>
+        </div>
+
+        <motion.div 
+          className="categories-grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          {brands.map((brand) => (
+            <motion.div key={brand.id} variants={fadeIn}>
+              <CategoryCard category={brand} />
             </motion.div>
           ))}
         </motion.div>
@@ -181,8 +229,8 @@ export default function Home({ onAddToCart }) {
           viewport={{ once: true }}
         >
           <div className="promo-content">
-            <h3>🚚 Free Delivery on Orders Above ₹499</h3>
-            <p>Get fast and free delivery on all orders over ₹499. Shop now!</p>
+            <h3>🚚 Free Delivery on Orders Above £499</h3>
+            <p>Get fast and free delivery on all orders over £499. Shop now!</p>
             <Link to="/products" className="promo-btn">
               Start Shopping
             </Link>
@@ -290,8 +338,8 @@ export default function Home({ onAddToCart }) {
                 <span>IAF HUB</span>
               </div>
               <p className="footer-tagline">
-                Your trusted online shopping platform for groceries, dairy, bakery, and personal care. 
-                Quality products delivered fast to your doorstep.
+                Your trusted wholesale supplier for South Indian dry and frozen foods. 
+                Premium quality products delivered all over UK.
               </p>
             </div>
 
@@ -307,10 +355,12 @@ export default function Home({ onAddToCart }) {
             <div className="footer-col">
               <h4>Categories</h4>
               <ul>
-                <li><Link to="/category/1">Groceries</Link></li>
-                <li><Link to="/category/2">Dairy</Link></li>
-                <li><Link to="/category/3">Bakery</Link></li>
-                <li><Link to="/category/4">Beverages</Link></li>
+                <li><Link to="/category/1">Rice Items</Link></li>
+                <li><Link to="/category/2">Dals & Pulses</Link></li>
+                <li><Link to="/category/3">Spices</Link></li>
+                <li><Link to="/category/4">Frozen Vegetables</Link></li>
+                <li><Link to="/category/5">Frozen Foods</Link></li>
+                <li><Link to="/category/6">Dry Items</Link></li>
               </ul>
             </div>
 

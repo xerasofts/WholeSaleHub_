@@ -5,6 +5,8 @@ import { useAuth } from '../context/AuthContext'
 
 export default function ProductCard({ product, onAddToCart }) {
   const [quantity, setQuantity] = useState(1)
+  const [imageError, setImageError] = useState(false)
+  const [imageLoading, setImageLoading] = useState(true)
   const navigate = useNavigate()
   const { isAuthenticated } = useAuth()
   const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
@@ -18,6 +20,29 @@ export default function ProductCard({ product, onAddToCart }) {
     setQuantity(1)
   }
 
+  const handleImageLoad = () => {
+    setImageLoading(false)
+    setImageError(false)
+  }
+
+  const handleImageError = () => {
+    setImageLoading(false)
+    setImageError(true)
+  }
+
+  const getCategoryEmoji = () => {
+    const emojiMap = {
+      'Rice Items': '🍚',
+      'Dals & Pulses': '🫘',
+      'Spices': '🌶️',
+      'Frozen Vegetables': '🥕',
+      'Frozen Foods': '❄️',
+      'Dry Items': '🌾',
+      'Personal Care': '🧴'
+    }
+    return emojiMap[product.category] || '📦'
+  }
+
   return (
     <motion.div
       className="product-card"
@@ -25,7 +50,20 @@ export default function ProductCard({ product, onAddToCart }) {
       transition={{ duration: 0.2 }}
     >
       <div className="product-image-container">
-        <img src={product.image} alt={product.name} className="product-image" />
+        {imageLoading && (
+          <div className="product-image-placeholder">⏳ Loading...</div>
+        )}
+        {imageError ? (
+          <div className="product-image-placeholder">{getCategoryEmoji()}</div>
+        ) : (
+          <img 
+            src={product.image} 
+            alt={product.name} 
+            className="product-image"
+            onLoad={handleImageLoad}
+            onError={handleImageError}
+          />
+        )}
         {discount > 0 && (
           <div className="discount-badge">-{discount}%</div>
         )}
@@ -45,9 +83,9 @@ export default function ProductCard({ product, onAddToCart }) {
 
         <div className="product-price-section">
           <div className="price-info">
-            <span className="current-price">₹{product.price}</span>
+            <span className="current-price">£{product.price}</span>
             {product.originalPrice && (
-              <span className="original-price">₹{product.originalPrice}</span>
+              <span className="original-price">£{product.originalPrice}</span>
             )}
           </div>
           <span className="product-unit">{product.unit}</span>

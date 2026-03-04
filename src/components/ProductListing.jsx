@@ -163,7 +163,7 @@ export default function ProductListing({ products, onAddToCart, title, showFilte
 
             {/* Price Range */}
             <div className="filter-group">
-              <label>💵 Price Range: ₹{priceRange[0]} - ₹{priceRange[1]}</label>
+              <label>💵 Price Range: £{priceRange[0]} - £{priceRange[1]}</label>
               <input
                 type="range"
                 min="0"
