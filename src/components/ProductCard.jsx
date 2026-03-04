@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
-export default function ProductCard({ product, onAddToCart }) {
+export default function ProductCard({ product, onAddToCart, hideAddToCart = false }) {
   const [quantity, setQuantity] = useState(1)
   const [imageError, setImageError] = useState(false)
   const [imageLoading, setImageLoading] = useState(true)
@@ -91,30 +91,34 @@ export default function ProductCard({ product, onAddToCart }) {
           <span className="product-unit">{product.unit}</span>
         </div>
 
-        <div className="product-quantity">
-          <button
-            className="qty-btn"
-            onClick={() => setQuantity(Math.max(1, quantity - 1))}
-          >
-            −
-          </button>
-          <span className="qty-display">{quantity}</span>
-          <button
-            className="qty-btn"
-            onClick={() => setQuantity(quantity + 1)}
-          >
-            +
-          </button>
-        </div>
+        {!hideAddToCart && (
+          <>
+            <div className="product-quantity">
+              <button
+                className="qty-btn"
+                onClick={() => setQuantity(Math.max(1, quantity - 1))}
+              >
+                −
+              </button>
+              <span className="qty-display">{quantity}</span>
+              <button
+                className="qty-btn"
+                onClick={() => setQuantity(quantity + 1)}
+              >
+                +
+              </button>
+            </div>
 
-        <motion.button
-          className="add-to-cart-btn"
-          onClick={handleAddToCart}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          🛒 Add to Cart
-        </motion.button>
+            <motion.button
+              className="add-to-cart-btn"
+              onClick={handleAddToCart}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              🛒 Add to Cart
+            </motion.button>
+          </>
+        )}
       </div>
     </motion.div>
   )

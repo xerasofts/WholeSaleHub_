@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import ProductListing from '../components/ProductListing'
+import CatalogListing from '../components/CatalogListing'
 import { categories, getProductsByCategory } from '../data/dummyData'
 
 export default function CategoryProducts({ onAddToCart }) {
@@ -37,11 +37,9 @@ export default function CategoryProducts({ onAddToCart }) {
           <p>{category.description}</p>
         </motion.div>
 
-        <ProductListing
+        <CatalogListing
           products={products}
           onAddToCart={onAddToCart}
-          title=""
-          showFilters={true}
         />
       </section>
     </div>

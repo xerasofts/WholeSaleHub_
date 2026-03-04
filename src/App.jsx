@@ -6,6 +6,7 @@ import useCart from './hooks/useCart'
 import Home from './pages/Home'
 import Cart from './pages/Cart'
 import Products from './pages/Products'
+import ProductDetail from './pages/ProductDetail'
 import CategoryProducts from './pages/CategoryProducts'
 import Login from './pages/Login'
 import AdminDashboard from './pages/AdminDashboard'
@@ -64,7 +65,7 @@ export default function App() {
 }
 
 function AppContent() {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('light')
   const { isAuthenticated, isAdmin } = useAuth()
   const location = useLocation()
   const { cart, addToCart, removeFromCart, updateQuantity, clearCart, getTotalPrice, getTotalItems, getTotalDiscount } = useCart()
@@ -95,6 +96,7 @@ function AppContent() {
         <Route path="/" element={<Home onAddToCart={addToCart} />} />
         <Route path="/home" element={<Home onAddToCart={addToCart} />} />
         <Route path="/products" element={<Products onAddToCart={addToCart} />} />
+        <Route path="/product/:id" element={<ProductDetail onAddToCart={addToCart} />} />
         <Route path="/category/:id" element={<CategoryProducts onAddToCart={addToCart} />} />
         <Route path="/cart" element={<Cart cartItems={cart} onUpdateQuantity={updateQuantity} onRemove={removeFromCart} getTotalPrice={getTotalPrice} getTotalDiscount={getTotalDiscount} />} />
       </Routes>

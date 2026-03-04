@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import ProductListing from '../components/ProductListing'
+import CatalogListing from '../components/CatalogListing'
 import { products } from '../data/dummyData'
 
 export default function Products({ onAddToCart }) {
@@ -16,11 +16,9 @@ export default function Products({ onAddToCart }) {
           <p>Browse our complete collection of quality products</p>
         </motion.div>
 
-        <ProductListing
+        <CatalogListing
           products={products}
           onAddToCart={onAddToCart}
-          title=""
-          showFilters={true}
         />
       </section>
     </div>

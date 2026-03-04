@@ -206,6 +206,7 @@ export default function Home({ onAddToCart }) {
           onAddToCart={onAddToCart}
           title=""
           showFilters={false}
+          hideAddToCart={true}
         />
 
         <motion.div
