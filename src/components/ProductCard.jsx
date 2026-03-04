@@ -1,11 +1,19 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 
 export default function ProductCard({ product, onAddToCart }) {
   const [quantity, setQuantity] = useState(1)
+  const navigate = useNavigate()
+  const { isAuthenticated } = useAuth()
   const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
 
   const handleAddToCart = () => {
+    if (!isAuthenticated) {
+      navigate('/login')
+      return
+    }
     onAddToCart(product, quantity)
     setQuantity(1)
   }

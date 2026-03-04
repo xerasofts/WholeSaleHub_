@@ -35,7 +35,7 @@ export default function Header({ theme, setTheme, cartCount = 0 }) {
             >
               🛒
             </motion.span>
-            <span>Wholesale hub</span>
+            <span>IAF HUB</span>
           </Link>
         ) : (
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
@@ -51,7 +51,7 @@ export default function Header({ theme, setTheme, cartCount = 0 }) {
             </motion.button>
             <Link to="/" className="logo">
               <span className="logo-icon">🛒</span>
-              <span>Wholesale hub</span>
+              <span>IAF HUB</span>
             </Link>
           </div>
         )}

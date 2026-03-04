@@ -32,17 +32,18 @@ export default function Home({ onAddToCart }) {
         >
           <motion.div className="hero-badge" variants={fadeIn}>
             <span className="hero-badge-dot" />
-            <span>Shop from thousands of quality products</span>
+            <span>Wholesale dry and frozen foods supplier</span>
           </motion.div>
           
           <motion.h1 className="hero-title" variants={fadeIn}>
-            <span className="hero-title-line">Everything You Need</span>
-            <span className="hero-title-line hero-title-gradient">At Your Doorstep</span>
+            <span className="hero-title-line">South Indian Dry and Frozen Foods</span>
+            <span className="hero-title-line">In Wholesale Quantity</span>
+            <span className="hero-title-line hero-title-gradient">Delivered all over UK</span>
           </motion.h1>
           
           <motion.p className="hero-subtitle" variants={fadeIn}>
-            Browse fresh groceries, dairy, bakery, beverages, snacks, and personal care products — 
-            all in one place with the best prices.
+            Browse all dry and frozen items from reputed brands like VIS***, AS***, MAL***, MAR***, and more — 
+            all in one place with the best wholesale prices.
           </motion.p>
 
           <motion.div className="search-quick-links" variants={fadeIn}>
@@ -50,27 +51,27 @@ export default function Home({ onAddToCart }) {
               <span>🥬</span> All Products
             </Link>
             <Link to="/category/1" className="quick-link">
-              <span>🥕</span> Groceries
+              <span>🥕</span> VIS***
             </Link>
             <Link to="/category/2" className="quick-link">
-              <span>🥛</span> Dairy
+              <span>🥛</span> AS***
             </Link>
             <Link to="/category/3" className="quick-link">
-              <span>🍞</span> Bakery
+              <span>🍞</span> MAL***
             </Link>
           </motion.div>
 
           <motion.div className="hero-stats" variants={fadeIn}>
             <div className="stat-item">
-              <div className="stat-number">27<span>+</span></div>
+              <div className="stat-number">1000<span>+</span></div>
               <div className="stat-label">Products</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">6<span></span></div>
-              <div className="stat-label">Categories</div>
+              <div className="stat-label">Brands</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">4.6<span>★</span></div>
+              <div className="stat-number">4.8<span>★</span></div>
               <div className="stat-label">Avg Rating</div>
             </div>
           </motion.div>
@@ -86,7 +87,7 @@ export default function Home({ onAddToCart }) {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            🛍️ Shop by Category
+            🏪 Shop by Brands
           </motion.span>
           <motion.h2 
             className="section-title"
@@ -94,7 +95,7 @@ export default function Home({ onAddToCart }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            Browse Product Categories
+            Explore Our Premium Brands
           </motion.h2>
           <motion.p 
             className="section-subtitle"
@@ -103,7 +104,7 @@ export default function Home({ onAddToCart }) {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            Find exactly what you're looking for
+            Quality dry and frozen products from trusted brands
           </motion.p>
         </div>
 

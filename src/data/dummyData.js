@@ -1,12 +1,12 @@
 // Comprehensive dummy data for the Online Shopping Platform
 
 export const categories = [
-  { id: 1, name: "Groceries", icon: "🥬", description: "Fresh vegetables & fruits" },
-  { id: 2, name: "Dairy", icon: "🥛", description: "Milk, cheese & yogurt" },
-  { id: 3, name: "Bakery", icon: "🍞", description: "Fresh bread & pastries" },
-  { id: 4, name: "Beverages", icon: "☕", description: "Drinks & juices" },
-  { id: 5, name: "Snacks", icon: "🍿", description: "Chips & snacks" },
-  { id: 6, name: "Personal Care", icon: "🧴", description: "Soaps & shampoos" },
+  { id: 1, name: "VIS***", icon: "🥬", description: "Premium dry & frozen foods" },
+  { id: 2, name: "AS***", icon: "🥛", description: "South Indian specialties" },
+  { id: 3, name: "MAL***", icon: "🍞", description: "Wholesale frozen items" },
+  { id: 4, name: "MAR***", icon: "☕", description: "Premium selections" },
+  { id: 5, name: "Frozen Foods", icon: "🍿", description: "Quality frozen products" },
+  { id: 6, name: "Dry Items", icon: "🧴", description: "Essential dry goods" },
 ]
 
 export const products = [
