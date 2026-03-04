@@ -1,11 +1,13 @@
 {
-  "name": "doctor-app",
+  "name": "wholesale-hub",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "homepage": "https://xerasofts.github.io/WholeSaleHub_",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "deploy": "npm run build && gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
